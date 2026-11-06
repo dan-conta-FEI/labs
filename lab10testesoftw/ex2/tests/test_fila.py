@@ -54,3 +54,9 @@ def test_aguardando_sobe_na_emissao_e_desce_na_chamada():
     assert fila.aguardando == 2
     fila.chamar()
     assert fila.aguardando == 1
+
+
+def test_chamar_com_fila_vazia_lanca_index_error():
+    fila = Fila()
+    with pytest.raises(IndexError):
+        fila.chamar()
