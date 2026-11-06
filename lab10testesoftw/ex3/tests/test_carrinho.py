@@ -91,3 +91,10 @@ def test_desconto_passa_a_valer_quando_subtotal_chega_ao_minimo():
     assert carrinho.total == 6000
     carrinho.adicionar(4000)
     assert carrinho.total == 9000
+
+
+def test_vinte_em_30000_da_24000():
+    carrinho = Carrinho()
+    carrinho.adicionar(30000)
+    carrinho.aplicar_cupom("VINTE")
+    assert carrinho.total == 24000
