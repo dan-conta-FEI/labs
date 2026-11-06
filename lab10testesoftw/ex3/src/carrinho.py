@@ -1,4 +1,5 @@
 CUPONS = {"DEZ": 10}  # codigo -> porcentagem de desconto
+MINIMO = 10000
 
 
 class Carrinho:
@@ -18,4 +19,6 @@ class Carrinho:
 
     @property
     def total(self):
+        if self._subtotal < MINIMO:
+            return self._subtotal
         return self._subtotal * (100 - self._desconto) // 100
