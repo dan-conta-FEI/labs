@@ -137,3 +137,10 @@ def test_cupom_desconhecido_nao_troca_o_cupom_atual():
     with pytest.raises(ValueError):
         carrinho.aplicar_cupom("XYZ")
     assert carrinho.total == 9000
+
+
+def test_quantidade_zero_e_rejeitada():
+    carrinho = Carrinho()
+    with pytest.raises(ValueError):
+        carrinho.adicionar(1000, quantidade=0)
+    assert carrinho.total == 0
