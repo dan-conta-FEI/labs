@@ -120,3 +120,11 @@ def test_vinte_depois_de_dez_substitui_o_primeiro():
     carrinho.aplicar_cupom("DEZ")
     carrinho.aplicar_cupom("VINTE")
     assert carrinho.total == 24000
+
+
+def test_dez_depois_de_vinte_substitui_o_primeiro():
+    carrinho = Carrinho()
+    carrinho.adicionar(30000)
+    carrinho.aplicar_cupom("VINTE")
+    carrinho.aplicar_cupom("DEZ")
+    assert carrinho.total == 27000
