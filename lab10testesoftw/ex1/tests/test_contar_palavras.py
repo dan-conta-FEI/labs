@@ -1,7 +1,27 @@
 # EXERCICIO 1: CONTADOR DE PALAVRAS
 #
 # C) GIT LOG --ONELINE
-# (COLE AQUI A SAIDA COMPLETA DE: git --no-pager log --oneline)
+# ceb1648 RED: texto vazio devolve dicionario vazio
+# 5b5c8f2 chore: ignora __pycache__ e .pytest_cache
+# cf6a3dc GREEN: devolveo  dicionario vazio
+# 9cc9845 RED: uma palavra conta uma ocorrencia
+# 5b5cba4 GREEN: conta ocorrencias de cada palavra
+# 0c95e06 TESTE: duas palavras viram dois itens (passou de primeira, sem RED)
+# 2b5e507 TESTE: palavra repetida soma ocorrencias (passou de primeira, sem RED)
+# 624ede7 RED: maiusculas contam como minusculas
+# 95a9d18 GREEN: converte para minusculas antes de contar
+# efdddaf TESTE: quebra de linha separa palavras (passou de primeira, sem RED)
+# f8d3976 TESTE: espacos multiplos separam duas palavras (passou de primeira, sem RED)
+# bd1eb72 TESTE: hifen interno faz parte da palavra (passou de primeira, sem RED)
+# 1988f72 RED: sinais nas bordas sao ignorados
+# 43cbd15 GREEN: remove sinais das bordas da palavra
+# 38df387 TESTE: varios sinais nas bordas sao ignorados (passou de primeira, sem RED)
+# 16136de TESTE: outros sinais nas bordas sao ignorados (passou de primeira, sem RED)
+# 90eeb47 RED: so pontuacao devolve dicionario vazio
+# 8128365 GREEN: descarta palavra vazia depois de tirar sinais
+# 3a61bfd TESTE: letras nas bordas nao sao removidas (mata mutante do strip)
+# 6f2227b DOCS: resposta do item e no arquivo de teste
+# d2e83f3 chore: ignora .coverage
 # NENHUM GREEN VEIO SEM UM RED ANTES.
 # OS COMMITS "TESTE:" NAO SAO GREEN, PORQUE O TESTE JA PASSOU DE PRIMEIRA.
 #
