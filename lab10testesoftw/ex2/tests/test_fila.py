@@ -68,3 +68,10 @@ def test_so_normais_seguem_ordem_de_chegada():
     fila.emitir("normal")
     assert fila.chamar() == "N1"
     assert fila.chamar() == "N2"
+
+
+def test_prioritaria_passa_na_frente_de_normal():
+    fila = Fila()
+    fila.emitir("normal")
+    fila.emitir("prioritaria")
+    assert fila.chamar() == "P1"
