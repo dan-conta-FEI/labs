@@ -39,3 +39,7 @@ def test_sinais_nas_bordas_sao_ignorados():
 
 def test_varios_sinais_nas_bordas_sao_ignorados():
     assert contar_palavras(",dia, ;dia;") == {"dia": 2}
+
+
+def test_outros_sinais_nas_bordas_sao_ignorados():
+    assert contar_palavras(":dia: ?dia?") == {"dia": 2}
