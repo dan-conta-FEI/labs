@@ -1,2 +1,5 @@
 def contar_palavras(texto):
-    return {}
+    contagem = {}
+    for palavra in texto.split():
+        contagem[palavra] = contagem.get(palavra, 0) + 1
+    return contagem
