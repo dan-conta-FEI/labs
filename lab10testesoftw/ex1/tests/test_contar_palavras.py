@@ -15,3 +15,7 @@ def test_duas_palavras_viram_dois_itens():
 
 def test_palavra_repetida_soma_ocorrencias():
     assert contar_palavras("dia a dia") == {"dia": 2, "a": 1}
+
+
+def test_maiusculas_contam_como_minusculas():
+    assert contar_palavras("Dia dia DIA") == {"dia": 3}
