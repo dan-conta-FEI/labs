@@ -112,3 +112,11 @@ def test_dez_em_30000_continua_com_10_por_cento():
     carrinho.adicionar(30000)
     carrinho.aplicar_cupom("DEZ")
     assert carrinho.total == 27000
+
+
+def test_vinte_depois_de_dez_substitui_o_primeiro():
+    carrinho = Carrinho()
+    carrinho.adicionar(30000)
+    carrinho.aplicar_cupom("DEZ")
+    carrinho.aplicar_cupom("VINTE")
+    assert carrinho.total == 24000
