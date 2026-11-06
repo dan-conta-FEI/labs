@@ -15,6 +15,7 @@
 # 12. CHAMAR UMA NORMAL ZERA A CONTAGEM (P1, P2, N1, DEPOIS P3, P4, N2)
 # 13. SEM NORMAL ESPERANDO, O LIMITE DE 2 NAO VALE (P1, P2, P3 SEGUIDAS)
 
+import pytest
 from fila import Fila
 
 
@@ -38,3 +39,9 @@ def test_prioritaria_tem_numeracao_propria():
     fila = Fila()
     fila.emitir("normal")
     assert fila.emitir("prioritaria") == "P1"
+
+
+def test_tipo_invalido_lanca_value_error():
+    fila = Fila()
+    with pytest.raises(ValueError):
+        fila.emitir("vip")
