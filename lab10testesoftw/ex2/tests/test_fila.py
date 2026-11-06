@@ -75,3 +75,11 @@ def test_prioritaria_passa_na_frente_de_normal():
     fila.emitir("normal")
     fila.emitir("prioritaria")
     assert fila.chamar() == "P1"
+
+
+def test_so_prioritarias_seguem_ordem_de_chegada():
+    fila = Fila()
+    fila.emitir("prioritaria")
+    fila.emitir("prioritaria")
+    assert fila.chamar() == "P1"
+    assert fila.chamar() == "P2"
