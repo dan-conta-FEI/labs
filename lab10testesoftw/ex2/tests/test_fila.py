@@ -21,3 +21,8 @@ from fila import Fila
 def test_fila_nova_nao_tem_ninguem_aguardando():
     fila = Fila()
     assert fila.aguardando == 0
+
+
+def test_emitir_normal_devolve_n1():
+    fila = Fila()
+    assert fila.emitir("normal") == "N1"
