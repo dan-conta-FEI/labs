@@ -26,3 +26,9 @@ def test_fila_nova_nao_tem_ninguem_aguardando():
 def test_emitir_normal_devolve_n1():
     fila = Fila()
     assert fila.emitir("normal") == "N1"
+
+
+def test_duas_normais_seguidas_numeram_n1_n2():
+    fila = Fila()
+    assert fila.emitir("normal") == "N1"
+    assert fila.emitir("normal") == "N2"
