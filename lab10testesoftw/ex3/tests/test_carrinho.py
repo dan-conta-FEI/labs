@@ -82,3 +82,12 @@ def test_dez_um_abaixo_do_minimo_nao_tem_desconto():
     carrinho.adicionar(9999)
     carrinho.aplicar_cupom("DEZ")
     assert carrinho.total == 9999
+
+
+def test_desconto_passa_a_valer_quando_subtotal_chega_ao_minimo():
+    carrinho = Carrinho()
+    carrinho.aplicar_cupom("DEZ")
+    carrinho.adicionar(6000)
+    assert carrinho.total == 6000
+    carrinho.adicionar(4000)
+    assert carrinho.total == 9000
