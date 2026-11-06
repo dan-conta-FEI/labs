@@ -156,3 +156,9 @@ def test_quantidade_nao_inteira_e_rejeitada():
     carrinho = Carrinho()
     with pytest.raises(ValueError):
         carrinho.adicionar(1000, quantidade=1.5)
+
+
+def test_quantidade_texto_e_rejeitada_com_value_error():
+    carrinho = Carrinho()
+    with pytest.raises(ValueError):
+        carrinho.adicionar(1000, quantidade="2")
