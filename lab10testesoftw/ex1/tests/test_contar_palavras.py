@@ -11,3 +11,7 @@ def test_uma_palavra_conta_uma_ocorrencia():
 
 def test_duas_palavras_viram_dois_itens():
     assert contar_palavras("bom dia") == {"bom": 1, "dia": 1}
+
+
+def test_palavra_repetida_soma_ocorrencias():
+    assert contar_palavras("dia a dia") == {"dia": 2, "a": 1}
