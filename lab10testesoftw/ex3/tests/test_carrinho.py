@@ -144,3 +144,9 @@ def test_quantidade_zero_e_rejeitada():
     with pytest.raises(ValueError):
         carrinho.adicionar(1000, quantidade=0)
     assert carrinho.total == 0
+
+
+def test_quantidade_negativa_e_rejeitada():
+    carrinho = Carrinho()
+    with pytest.raises(ValueError):
+        carrinho.adicionar(1000, quantidade=-1)
