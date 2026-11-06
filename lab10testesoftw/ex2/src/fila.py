@@ -17,10 +17,12 @@ class Fila:
 
     def chamar(self):
         if self._seguidas >= 2 and self._normais:
+            self._seguidas = 0
             return self._normais.pop(0)
         if self._prioritarias:
             self._seguidas += 1
             return self._prioritarias.pop(0)
+        self._seguidas = 0
         return self._normais.pop(0)
 
     @property
