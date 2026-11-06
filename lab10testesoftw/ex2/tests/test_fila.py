@@ -32,3 +32,9 @@ def test_duas_normais_seguidas_numeram_n1_n2():
     fila = Fila()
     assert fila.emitir("normal") == "N1"
     assert fila.emitir("normal") == "N2"
+
+
+def test_prioritaria_tem_numeracao_propria():
+    fila = Fila()
+    fila.emitir("normal")
+    assert fila.emitir("prioritaria") == "P1"
