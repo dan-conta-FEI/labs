@@ -19,3 +19,7 @@ def test_palavra_repetida_soma_ocorrencias():
 
 def test_maiusculas_contam_como_minusculas():
     assert contar_palavras("Dia dia DIA") == {"dia": 3}
+
+
+def test_quebra_de_linha_separa_palavras():
+    assert contar_palavras("bom\ndia") == {"bom": 1, "dia": 1}
