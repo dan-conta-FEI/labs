@@ -1,3 +1,21 @@
+# EXERCICIO 1: CONTADOR DE PALAVRAS
+#
+# C) GIT LOG --ONELINE
+# (COLE AQUI A SAIDA COMPLETA DE: git --no-pager log --oneline)
+# NENHUM GREEN VEIO SEM UM RED ANTES.
+# OS COMMITS "TESTE:" NAO SAO GREEN, PORQUE O TESTE JA PASSOU DE PRIMEIRA.
+#
+# D) TESTES QUE PASSARAM NA PRIMEIRA EXECUCAO
+# "BOM DIA": O SPLIT() JA SEPARAVA POR ESPACO
+# "DIA A DIA": O CONTAGEM.GET(PALAVRA, 0) + 1 JA CONTAVA REPETICAO
+# "BOM\NDIA": O SPLIT() SEM ARGUMENTO SEPARA POR QUALQUER ESPACO EM BRANCO
+# "BOM   DIA": O SPLIT() JUNTA ESPACOS SEGUIDOS NUM SEPARADOR SO
+# "GUARDA-CHUVA": HIFEN NAO E SEPARADOR PRO SPLIT()
+# ",DIA, ;DIA;": O STRIP() JA TIRAVA VARIOS SINAIS NAS DUAS BORDAS
+# ":DIA: ?DIA?": OS SEIS SINAIS JA ESTAVAM NA LISTA DO STRIP()
+# TODOS FICAM NA SUITE: NAO GUIARAM CODIGO NOVO, MAS DOCUMENTAM O CONTRATO
+# E PROTEGEM CONTRA REGRESSAO.
+
 from contador import contar_palavras
 
 
@@ -47,3 +65,6 @@ def test_outros_sinais_nas_bordas_sao_ignorados():
 
 def test_so_pontuacao_devolve_dicionario_vazio():
     assert contar_palavras("... !") == {}
+
+def test_letras_nas_bordas_nao_sao_removidas():
+    assert contar_palavras("xaxa, xox!") == {"xaxa": 1, "xox": 1}
