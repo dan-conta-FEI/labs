@@ -35,3 +35,7 @@ def test_hifen_interno_faz_parte_da_palavra():
 
 def test_sinais_nas_bordas_sao_ignorados():
     assert contar_palavras("fim. Fim!") == {"fim": 2}
+
+
+def test_varios_sinais_nas_bordas_sao_ignorados():
+    assert contar_palavras(",dia, ;dia;") == {"dia": 2}
