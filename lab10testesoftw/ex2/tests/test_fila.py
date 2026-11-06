@@ -110,3 +110,15 @@ def test_sem_normal_esperando_limite_de_duas_nao_vale():
         fila.emitir("prioritaria")
     chamadas = [fila.chamar() for _ in range(3)]
     assert chamadas == ["P1", "P2", "P3"]
+
+
+def test_chamar_normal_por_falta_de_prioritaria_zera_a_contagem():
+    fila = Fila()
+    fila.emitir("normal")
+    assert fila.chamar() == "N1"
+    fila.emitir("prioritaria")
+    fila.emitir("prioritaria")
+    fila.emitir("normal")
+    fila.emitir("normal")
+    chamadas = [fila.chamar() for _ in range(4)]
+    assert chamadas == ["P1", "P2", "N2", "N3"]
