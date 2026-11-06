@@ -128,3 +128,12 @@ def test_dez_depois_de_vinte_substitui_o_primeiro():
     carrinho.aplicar_cupom("VINTE")
     carrinho.aplicar_cupom("DEZ")
     assert carrinho.total == 27000
+
+
+def test_cupom_desconhecido_nao_troca_o_cupom_atual():
+    carrinho = Carrinho()
+    carrinho.adicionar(10000)
+    carrinho.aplicar_cupom("DEZ")
+    with pytest.raises(ValueError):
+        carrinho.aplicar_cupom("XYZ")
+    assert carrinho.total == 9000
