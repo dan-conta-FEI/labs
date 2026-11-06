@@ -60,3 +60,11 @@ def test_chamar_com_fila_vazia_lanca_index_error():
     fila = Fila()
     with pytest.raises(IndexError):
         fila.chamar()
+
+
+def test_so_normais_seguem_ordem_de_chegada():
+    fila = Fila()
+    fila.emitir("normal")
+    fila.emitir("normal")
+    assert fila.chamar() == "N1"
+    assert fila.chamar() == "N2"
