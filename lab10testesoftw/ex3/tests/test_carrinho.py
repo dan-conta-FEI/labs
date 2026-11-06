@@ -75,3 +75,10 @@ def test_dez_no_minimo_exato_tem_desconto():
     carrinho.adicionar(10000)
     carrinho.aplicar_cupom("DEZ")
     assert carrinho.total == 9000
+
+
+def test_dez_um_abaixo_do_minimo_nao_tem_desconto():
+    carrinho = Carrinho()
+    carrinho.adicionar(9999)
+    carrinho.aplicar_cupom("DEZ")
+    assert carrinho.total == 9999
