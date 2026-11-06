@@ -92,3 +92,13 @@ def test_depois_de_duas_prioritarias_chama_normal():
     fila.emitir("normal")
     chamadas = [fila.chamar() for _ in range(4)]
     assert chamadas == ["P1", "P2", "N1", "P3"]
+
+
+def test_chamar_normal_zera_a_contagem_de_prioritarias():
+    fila = Fila()
+    for _ in range(4):
+        fila.emitir("prioritaria")
+    fila.emitir("normal")
+    fila.emitir("normal")
+    chamadas = [fila.chamar() for _ in range(6)]
+    assert chamadas == ["P1", "P2", "N1", "P3", "P4", "N2"]
