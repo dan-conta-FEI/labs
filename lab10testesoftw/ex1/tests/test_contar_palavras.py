@@ -31,3 +31,7 @@ def test_espacos_multiplos_separam_duas_palavras():
 
 def test_hifen_interno_faz_parte_da_palavra():
     assert contar_palavras("guarda-chuva") == {"guarda-chuva": 1}
+
+
+def test_sinais_nas_bordas_sao_ignorados():
+    assert contar_palavras("fim. Fim!") == {"fim": 2}
