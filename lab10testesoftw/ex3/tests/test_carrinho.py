@@ -168,3 +168,9 @@ def test_quantidade_1_e_a_menor_valida():
     carrinho = Carrinho()
     carrinho.adicionar(1000, quantidade=1)
     assert carrinho.total == 1000
+
+
+def test_preco_1_e_o_menor_valido():
+    carrinho = Carrinho()
+    carrinho.adicionar(1)
+    assert carrinho.total == 1
