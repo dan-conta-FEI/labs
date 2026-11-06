@@ -98,3 +98,10 @@ def test_vinte_em_30000_da_24000():
     carrinho.adicionar(30000)
     carrinho.aplicar_cupom("VINTE")
     assert carrinho.total == 24000
+
+
+def test_vinte_abaixo_de_30000_nao_tem_desconto():
+    carrinho = Carrinho()
+    carrinho.adicionar(29999)
+    carrinho.aplicar_cupom("VINTE")
+    assert carrinho.total == 29999
