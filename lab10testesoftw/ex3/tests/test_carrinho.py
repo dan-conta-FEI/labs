@@ -105,3 +105,10 @@ def test_vinte_abaixo_de_30000_nao_tem_desconto():
     carrinho.adicionar(29999)
     carrinho.aplicar_cupom("VINTE")
     assert carrinho.total == 29999
+
+
+def test_dez_em_30000_continua_com_10_por_cento():
+    carrinho = Carrinho()
+    carrinho.adicionar(30000)
+    carrinho.aplicar_cupom("DEZ")
+    assert carrinho.total == 27000
