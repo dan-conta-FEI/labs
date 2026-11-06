@@ -45,3 +45,12 @@ def test_tipo_invalido_lanca_value_error():
     fila = Fila()
     with pytest.raises(ValueError):
         fila.emitir("vip")
+
+
+def test_aguardando_sobe_na_emissao_e_desce_na_chamada():
+    fila = Fila()
+    fila.emitir("normal")
+    fila.emitir("prioritaria")
+    assert fila.aguardando == 2
+    fila.chamar()
+    assert fila.aguardando == 1
